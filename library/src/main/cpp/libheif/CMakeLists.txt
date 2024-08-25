@@ -1,6 +1,6 @@
 FetchContent_Declare(libheif
   GIT_REPOSITORY  https://github.com/strukturag/libheif
-  GIT_TAG         v1.13.0
+  GIT_TAG         v1.17.6
   PATCH_COMMAND   echo "" > gdk-pixbuf/CMakeLists.txt # Avoid building gdk-pixbuf, we don't need it
   BINARY_DIR      build
   SUBBUILD_DIR    subbuild

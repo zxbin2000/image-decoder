@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.14)
 project(imagedecoder C CXX ASM)
 include(FetchContent)
 
+set(ENV{http_proxy} "http://127.0.0.1:7890")
+set(ENV{https_proxy} "http://127.0.0.1:7890")
 set(CMAKE_BUILD_TYPE Release)
 
 option(WITH_JPEG "Include JPEG decoder" ON)

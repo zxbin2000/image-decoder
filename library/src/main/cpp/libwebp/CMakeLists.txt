@@ -1,3 +1,5 @@
+set(ENV{http_proxy} "http://127.0.0.1:7890")
+set(ENV{https_proxy} "http://127.0.0.1:7890")
 FetchContent_Declare(libwebp
   GIT_REPOSITORY  https://chromium.googlesource.com/webm/libwebp
   GIT_TAG         v1.3.2

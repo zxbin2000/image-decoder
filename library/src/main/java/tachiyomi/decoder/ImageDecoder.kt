@@ -105,6 +105,13 @@ class ImageDecoder private constructor(
       return stream.use { nativeNewInstance(it, cropBorders, displayProfile) }
     }
 
+    fun newInstance(
+      stream: InputStream,
+      cropBorders: Boolean = false,
+    ) : ImageDecoder? {
+      return stream.use { nativeNewInstance(it, cropBorders) }
+    }
+
     fun findType(bytes: ByteArray): ImageType? {
       return nativeFindType(bytes)
     }
@@ -114,6 +121,12 @@ class ImageDecoder private constructor(
       stream: InputStream,
       cropBorders: Boolean = false,
       displayProfile: ByteArray?,
+    ) : ImageDecoder?
+
+    @JvmStatic
+    private external fun nativeNewInstance(
+      stream: InputStream,
+      cropBorders: Boolean = false,
     ) : ImageDecoder?
 
     @JvmStatic
